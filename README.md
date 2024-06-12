@@ -193,7 +193,9 @@ export default router;
 
 
 3.2 login - Oprócz podstawowych operacji, implementuje również ciekawą funkcjonalność - każde nowo zarejestrowane hasło "Haszuje"
-i zapisuje do bazy danych w tej właśnie postaci. Uniemożliwia to kradzież haseł nawet w przypadku wypłynięcia danych z Bazy. Użytkownik przy logowaniu podaje hasło, następnie tworzony jest request i w serverze to hasło jest haszowane i porównywane z tym zapisanym w bazie danych. Dodatkowo sprawdzane jest czy logująca się osoba to Admin, czy Klient i w zależności od tego udostępniane są poszczególne funkcjonalności. 
+i zapisuje do bazy danych w tej właśnie postaci. 
+Uniemożliwia to kradzież haseł nawet w przypadku wypłynięcia danych z Bazy. Użytkownik przy logowaniu podaje hasło, następnie tworzony jest request i w serverze to hasło jest haszowane i porównywane z tym zapisanym w bazie danych.
+ Dodatkowo sprawdzane jest czy logująca się osoba to Admin, czy Klient i w zależności od tego udostępniane są poszczególne funkcjonalności. 
 
 
 import express from 'express';
