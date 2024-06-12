@@ -190,13 +190,14 @@ router.delete('/:id', async (req, res) => {
 
 export default router;
 
-
+(''')
 
 3.2 login - Oprócz podstawowych operacji, implementuje również ciekawą funkcjonalność - każde nowo zarejestrowane hasło "Haszuje"
 i zapisuje do bazy danych w tej właśnie postaci. 
 Uniemożliwia to kradzież haseł nawet w przypadku wypłynięcia danych z Bazy. Użytkownik przy logowaniu podaje hasło, następnie tworzony jest request i w serverze to hasło jest haszowane i porównywane z tym zapisanym w bazie danych.
  Dodatkowo sprawdzane jest czy logująca się osoba to Admin, czy Klient i w zależności od tego udostępniane są poszczególne funkcjonalności. 
 
+(''')
 
 import express from 'express';
 import crypto from 'crypto';
@@ -239,10 +240,10 @@ router.post('/', async (req, res) => {
 
 export default router;
 
-
+(''')
 
 3.3 Orders - Podstawowe operacje CRUD oraz sprawdzanie czy przy składaniu zamówienia, produkty w nie wchodzące są w magazynie, jeśli nie, informuje użytkownika, którego produktu brakuje. Jeśli zamówienie jest możliwe do zrealizowania, tworzony jest nowy Payment z id obeznego zamówienia.
-
+(''')
 
 import express from 'express';
 import { ObjectId } from 'mongodb';
@@ -418,7 +419,11 @@ router.delete('/:id', async (req, res) => {
 
 export default router;
 
+(''')
+
 3.4 Payments - Oprócz podstawowych operacji, payment przy realizacji sprawdza za jakie zamówienie odpowiada i jeśli zostało ono opłacone to zmniejsza ilość produktów w magazynie o ilość podaną w zamówieniu. Jeśli użytkownik złożył zamówienie gdy produkty były dostępne, ale nie opłacił na czas i ktoś inny wykupił dany produkt, przy tworzeniu płatności klient zostanie poinformowany o braku produktów na magazynie.
+
+(''')
 
 import express from 'express';
 import { ObjectId } from 'mongodb';
@@ -609,7 +614,11 @@ router.delete('/:id', async (req, res) => {
 
 export default router;
 
+(''')
+
 3.5 Products - Podstawowe operacje CRUD, zmiany w kolekcji nie wpływają na inne kolekcje: 
+
+(''')
 
 import express from 'express';
 import { ObjectId } from 'mongodb';
@@ -747,7 +756,11 @@ router.delete('/:id', async (req, res) => {
 });
 export default router;
 
+(''')
+
 3.6 Reviews - Podstawowe operacje CRUD, zmiany w kolekcji nie wpływają na inne kolekcje : 
+
+(''')
 
 import express from 'express';
 import { ObjectId } from 'mongodb';
@@ -887,7 +900,11 @@ router.delete('/:id', async (req, res) => {
 export default router;
 
 
+(''')
+
 3.7 Shipping - podstawowe operacje CRUD, zmiany w kolekcji nie wpływają na inne kolekcje. Sposób dostawy jest wynierany przez użytkownika podczas tworzenia płatności i jest traktowany odrębnie.
+
+(''')
 
 import express from 'express';
 import { ObjectId } from 'mongodb';
@@ -1026,7 +1043,11 @@ router.delete('/:id', async (req, res) => {
 
 export default router;
 
+(''')
+
 3.8 Users - operacje zgodne z tabelą login. Użytkowników można wypisać lub zarejestrować. 
+
+(''')
 
 import express from 'express';
 import { ObjectId } from 'mongodb';
