@@ -59,6 +59,7 @@ zastąpienia (PUT), edycji (PATCH) i usunięcia (DELETE) elementów z kolekcji z
 
 3.1 Categories - jest relatywnie stałą kolekcją i zmiany w innych nie mają na nią wpływu, dlatego implementuje ona podstawowe operacje CRUD.
 
+```javascript
 import express from 'express';
 import { ObjectId } from 'mongodb';
 import { connectToDatabase } from '../db.js';
@@ -136,7 +137,6 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-
 router.patch('/:id', async (req, res) => {
   try {
     const db = await connectToDatabase();
@@ -161,7 +161,6 @@ router.patch('/:id', async (req, res) => {
     res.status(500).send({ message: 'Internal Server Error', error: err.message });
   }
 });
-
 
 router.delete('/:id', async (req, res) => {
   try {
@@ -188,10 +187,14 @@ router.delete('/:id', async (req, res) => {
 });
 
 
+
 export default router;
+
+
 
 3.2 login - Oprócz podstawowych operacji, implementuje również ciekawą funkcjonalność - każde nowo zarejestrowane hasło "Haszuje"
 i zapisuje do bazy danych w tej właśnie postaci. Uniemożliwia to kradzież haseł nawet w przypadku wypłynięcia danych z Bazy. Użytkownik przy logowaniu podaje hasło, następnie tworzony jest request i w serverze to hasło jest haszowane i porównywane z tym zapisanym w bazie danych. Dodatkowo sprawdzane jest czy logująca się osoba to Admin, czy Klient i w zależności od tego udostępniane są poszczególne funkcjonalności. 
+
 
 import express from 'express';
 import crypto from 'crypto';
@@ -233,6 +236,8 @@ router.post('/', async (req, res) => {
 });
 
 export default router;
+
+
 
 3.3 Orders - Podstawowe operacje CRUD oraz sprawdzanie czy przy składaniu zamówienia, produkty w nie wchodzące są w magazynie, jeśli nie, informuje użytkownika, którego produktu brakuje. Jeśli zamówienie jest możliwe do zrealizowania, tworzony jest nowy Payment z id obeznego zamówienia.
 
