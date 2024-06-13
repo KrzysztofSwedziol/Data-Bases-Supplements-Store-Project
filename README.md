@@ -22,7 +22,7 @@ unikatowy identyfikator "_id" będący int, listę przedmiotów wchodzących w s
 
 <h4>Przykładowa pozycja z kolekcji orders prezentuje się w następujący sposób : <h4>
 
-![alt text](orders.png)
+![alt text](<screenyv2/orders.png>)
 
 <h3>1.3 Payments<h3>
 
@@ -30,7 +30,7 @@ unikatowy identyfikator "_id" będący int, listę przedmiotów wchodzących w s
 
 <h4>Przykład z kolekcji payments : <h4>
 
-![alt text](payment.png)
+![alt text](<screenyv2/payment.png>)
 
 <h3>1.4 Categories<h3>
 
@@ -39,7 +39,7 @@ unikalnego identyfikatora "_id" typu int, nazwy "name" typu string oraz opisu "d
 
 <h4>Przykładowy obiekt z kolekcji Categories : <h4>
 
-![alt text](Categories.png)
+![alt text](<screenyv2/Categories.png>)
 
 <h3>1.5 Reviews<h3>
 
@@ -55,7 +55,7 @@ unikalnego identyfikatora "_id" typu int, nazwy "name" typu string oraz opisu "d
 
 <h4>Przykładowa pozycja z Shipping : <h4>
 
-![alt text](shipping.png)
+![alt text](<screenyv2/shipping.png>)
 
 <h3>1.7 Suppliers <h3>
 
@@ -63,7 +63,7 @@ unikalnego identyfikatora "_id" typu int, nazwy "name" typu string oraz opisu "d
 
 <h4> Przykładowa pozycja z Suppliers : <h4>
 
-![alt text](suppliers.png)
+![alt text](<screenyv2/suppliers.png>)
 
 <h3>1.8 Users<h3>
 
@@ -71,7 +71,7 @@ unikalnego identyfikatora "_id" typu int, nazwy "name" typu string oraz opisu "d
 
 <h4>Przykładowa pozycja z Users : <h4>
 
-![alt text](Users.png)
+![alt text](<screenyv2/Users.png>)
 
 <h2> 2. Opis działania backendu<h2>
 
@@ -79,31 +79,31 @@ unikalnego identyfikatora "_id" typu int, nazwy "name" typu string oraz opisu "d
 
 <h4>w celu zwiększenia czytelności, handlery do poszczególnych requestów, odpowiadających za poszczególne kolekcje umieściliśmy w osobnych routach: <h4>
 
-![alt text](routes.png)
+![alt text](<screenyv2/routes.png>)
 
 <h3>2.2 Bezpieczeństwo aplikacji<h3>
 
 <h4>W celu bezpieczeństwa, aby uchronić się przed wykradnięciem danych w postaci na przykład haseł, stworzyliśmy dodatkowy plik .env, w którym przechowujemy takowe informacje, który natomiast dodaliśmy do .gitignore<h4>
 
-![alt text](env.png)
+![alt text](<screenyv2/env.png>)
 
 <h3>2.3 Łączenie z bazą danych<h3>
 
 <h4>Żeby ułatwić sobie łączenie z bazą, stworzyliśmy jeden plik js, który obsługuje właśnie to zadanie w funkcji, którą eksportuje. Oznacza to że w pozostałych plikach nie musimy robić tego ręcznie, a jedynie zaimportować i użyć opisywaną funkcję.<h4>
 
-![alt text](<Connect To Database.png>)
+![alt text](<screenyv2/Connect To Database.png>)
 
 <h3>Główna część servera<h3>
 
 <h4>Główna część servera umieszczona jest w pliku app.js, który nasłuchuje nadchodzące requesty i przekierowuje je pod odpowiednie routy<h4>
 
-![alt text](<app js.png>)
+![alt text](<screenyv2/app js.png>)
 
 <h3>Struktura Plików<h3>
 
 <h4>Struktura wszystkich plików prezentuje się następująco :<h4>
 
-![alt text](<Struktura Projektu.png>)
+![alt text](<screenyv2/Struktura Projektu.png>)
 
 <h2>Routy<h2>
 
@@ -114,25 +114,25 @@ unikalnego identyfikatora "_id" typu int, nazwy "name" typu string oraz opisu "d
 
 <h4>GET - wyświetli wszystkie produkty<h4>
 
-![alt text](productsGET.png)
+![alt text](<screenyv2/productsGET.png>)
 
 <h4> POST - doda nowy produkt<h4>
 
-![alt text](postBody.png)
+![alt text](<screenyv2/postBody.png>)
 
-![alt text](dodanyProd.png)
+![alt text](<screenyv2/dodanyProd.png>)
 
 <h4> PUT - zastąpi produkt nowym<h4>
 
-![alt text](put.png)
+![alt text](<screenyv2/put.png>)
 
 <h4>PATCH - zmodyfikuje istniejący produkt<h4>
 
-![alt text](patch.png)
+![alt text](<screenyv2/patch.png>)
 
 <h4> DELETE - usunie produkt<h4>
 
-![alt text](DELETE.png)
+![alt text](<screenyv2/DELETE.png>)
 
 <h4>Analogicznie działają te operacje dla innych routów odpowiedzialnych za swoje kolekcje. 
 
@@ -175,18 +175,18 @@ Uniemożliwia to kradzież haseł nawet w przypadku wypłynięcia danych z Bazy.
 
  <h4>Kiedy składamy zamówienie, najpierw sprawdzane jest czy wszystkie produkty z tego zamówienia są w magazynie, jeśli nie, użytkownik jest informowany których produktów jest za mało. : <h4>
 
- ![alt text](notInStock.png)
+ ![alt text](<screenyv2/notInStock.png>)
 
  <h4>Następnie, jeśli produkty były na stanie, zostaje utworzone zamówienie, program oblicza łączną cenę zamówienia i dodaje je do bazy danych ale jeszcze nie rezerwuje produktów w nim zawartych - stanie się to dopiero przy opłaceniu. Tworzona jest też nowa płatność z completed : false.Na screenshotach pokazane jest działanie dla zamówienia z poprzedniego zrzutu ale ze zmienionym id na 2228 i payment id 2228 oraz ilość produktów 1 kategorii to 2 a drugiej kategorii to 1 <h4>
 
- ![alt text](Paymentt.png)
+ ![alt text](<screenyv2/Paymentt.png>)
 
  <h4>Po zmianie statusu płatności na completed : True, w products ilość produktów zostanie zmniejszona o ilość podaną w zamówieniu<h4>
 
  <h4>obecny stan magazynu : <h4>
  
- ![alt text](stanMag1.png)
+ ![alt text](<screenyv2/stanMag1.png>)
 
  <h4>stan magazynu po zapłaceniu : <h4>
 
- ![alt text](stanMag2.png)
+ ![alt text](<screenyv2/stanMag2.png>)
